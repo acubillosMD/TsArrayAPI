@@ -3,6 +3,6 @@ import { ArrayApi } from "../src/collectionManager"
 (async () => {
 
     let arrayApi = new ArrayApi()
-    arrayApi.GetOldestWithLessFriends()
-    console.log() 
+    let res = arrayApi.GetPersonSortedBayName()
+    console.log(res) 
 })()

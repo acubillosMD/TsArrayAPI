@@ -1,19 +1,21 @@
 import { Friend } from "model/friend";
 import { Person } from "model/person";
-import { json } from "stream/consumers";
 import personJson from '../collections/person.json'
 
 export class ArrayApi{
 
+    //Obetener el total de personas
     GetPersonsCount(): number {
         return personJson.length
     }
 
+    //Obtener personas mayores a 30 años
     FilterByAgeOverThirty(): Person[]  {
         let persons: Person[] = personJson.filter(person => person.age > 30)
         return persons;
     }
 
+    //Obtener solo el nombre de personas mayores a 30 años
     GetPersonNamesWithAgeOverThirty(): string[] {
         let personsNames: string[] = personJson.filter(person => person.age > 30)
         .map(person => {
@@ -22,25 +24,30 @@ export class ArrayApi{
         return personsNames;
     }
 
+    //Obtener personas sin amigos
     GetPersonsWithoutFriends(): Person[] {
         let persons: Person[] = personJson.filter(person => person.friends.length <= 0)
         return persons;
     }
 
+    //Obtener persona por ID
     GetPersonById(id: number): Person | undefined{
         let person = personJson.find(person => person.id === id)
         return person
     }
 
+    //Obtener si persona existe por nombre
     PersonExists(name: string): boolean {
         return personJson.some(person => person.name === name)
     }
 
+    //Obtener todos los amigos
     GetAllFriends(): Friend[] {
         let friends: Friend[] = personJson.map(person => person.friends).flat()
         return friends
     }
 
+    //Obtener solo los nombres de todos los amigos
     GetAllFriendsName(): string[] {
         let friends: Friend[]  = personJson.filter(person => person.friends.flat())
         let names: string[] = friends.map(friends => friends.name)
@@ -50,7 +57,8 @@ export class ArrayApi{
     //Cual es el usuario con estado desactivado con más amigos.
     GetDisabledUserWithMostFriends(): Person | undefined {
         let disabledPersons: Person[] = personJson.filter(person => !person.isActive)
-        let mostFriends: number = disabledPersons.sort(person => person.friends.length).reverse().map(person => person.friends.length)[0]
+        let sortedByFriendsCount = disabledPersons.sort( (a, b) => b.friends.length - a.friends.length )
+        let mostFriends: number = sortedByFriendsCount[0].friends.length
         let person: Person | undefined = disabledPersons.find(person => person.friends.length == mostFriends)
         return person
     }
@@ -81,12 +89,17 @@ export class ArrayApi{
 
     //Cual persona tiene el nombre más largo 
     GetPersonWithTheLongestName(): Person {
-        return personJson.sort(person => person.name.length).reverse()[0]
+        return personJson.sort((a, b) => b.name.length - a.name.length)[0]
     }
 
     //Cual persona tiene el nombre más corto de todos 
     GetPersonWithShortestName(): Person {
-        return personJson.sort(person => person.name.length)[0]
+        return personJson.sort((a, b) => a.name.length - b.name.length)[0]
+    }
+
+    //Ordernar personas alfabeticamente por nombre
+    GetPersonSortedBayName(): Person[] {
+        return personJson.sort((a, b) => a.name.localeCompare(b.name) )
     }
 
     //Cual amigo tiene el nombre más largo y el más corto de todos
