@@ -98,16 +98,43 @@ export class ArrayApi{
     }
 
     //Ordernar personas alfabeticamente por nombre
-    GetPersonSortedBayName(): Person[] {
+    GetPersonSortedByName(): Person[] {
         return personJson.sort((a, b) => a.name.localeCompare(b.name) )
     }
 
     //Cual amigo tiene el nombre más largo de todos
+    GetFriendWithLongestName(): Friend {
+        let friends: Friend[]  = personJson.map(person => person.friends).flat()
+        let friendWithLongestName: Friend = friends.sort((a, b) => b.name.length - a.name.length)[0]
+        return friendWithLongestName
+    }
 
     //Cual amigo tiene el nombre más corto de todos
+    GetFriendWithShortestName(): Friend {
+        let friends: Friend[]  = personJson.map(person => person.friends).flat()
+        let friendWithShortestName: Friend = friends.sort((a, b) => a.name.length - b.name.length)[0]
+        return friendWithShortestName
+    }
 
-    //Cual usuario tiene la numeración más alta en su dirección
+    //Cual persona tiene la numeración más alta en su dirección
+    GetHighestAddressNumber(): number {
+        let personAddresses: string[] = personJson.map(person => person.address)
+        let addressesNumber: number[] = personAddresses.map(address => {
+            let addressNumber: number = Number(address.split(' ')[0].trim())
+            return addressNumber
+        })
+        let highestAddressNumber = addressesNumber.sort((a, b) => b - a)[0]
+        return highestAddressNumber;
+    }
 
-    //Cual usuario tiene el codigo postal menor
-
+    //Cual persona tiene el codigo postal menor
+    GetLowestAddressNumber(): number {
+        let personAddresses: string[] = personJson.map(person => person.address)
+        let addressesNumber: number[] = personAddresses.map(address => {
+            let addressNumber: number = Number(address.split(' ').at(-1))
+            return addressNumber
+        })
+        let highestAddressNumber = addressesNumber.sort((a, b) => a - b)[0]
+        return highestAddressNumber;
+    }
 }
