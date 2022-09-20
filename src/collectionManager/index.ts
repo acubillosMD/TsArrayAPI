@@ -102,12 +102,12 @@ export class ArrayApi{
         return personJson.sort((a, b) => a.name.localeCompare(b.name) )
     }
 
-    //Cual amigo tiene el nombre más largo y el más corto de todos
+    //Cual amigo tiene el nombre más largo de todos
 
     //Cual amigo tiene el nombre más corto de todos
 
     //Cual usuario tiene la numeración más alta en su dirección
 
-    //que usuario tiene el codigo postal menor
+    //Cual usuario tiene el codigo postal menor
 
 }
