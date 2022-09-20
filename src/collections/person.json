@@ -1,0 +1,221 @@
+[
+    {
+      "id": 0,
+      "guid": "3c668721-3af1-4477-8c29-e0be63fd6496",
+      "isActive": true,
+      "age": 27,
+      "name": "Cleveland Farmer",
+      "email": "clevelandfarmer@codact.com",
+      "address": "547 Harden Street, Martinez, Virgin Islands, 5994",
+      "registered": "2015-09-10T12:45:43 +03:00",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Norris Petty"
+        },
+        {
+          "id": 1,
+          "name": "Pearlie Hatfield"
+        },
+        {
+          "id": 2,
+          "name": "Hollie Michael"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "guid": "b02295e5-33b4-4a98-9794-00361eb42949",
+      "isActive": true,
+      "age": 28,
+      "name": "Aurora Riley",
+      "email": "aurorariley@codact.com",
+      "address": "437 Erasmus Street, Snelling, Illinois, 3932",
+      "registered": "2019-07-03T03:51:55 +04:00",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Esther Mills"
+        },
+        {
+          "id": 1,
+          "name": "Francis Little"
+        },
+        {
+          "id": 2,
+          "name": "Robbins Leach"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "guid": "113ef314-7db4-4619-8c38-977bab5c0968",
+      "isActive": true,
+      "age": 30,
+      "name": "Alston Gilliam",
+      "email": "alstongilliam@codact.com",
+      "address": "508 Ferry Place, Itmann, Colorado, 2408",
+      "registered": "2016-12-31T01:11:41 +03:00",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Deena Allen"
+        },
+        {
+          "id": 1,
+          "name": "Caroline Smith"
+        },
+        {
+          "id": 2,
+          "name": "Melendez Bright"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "guid": "6128afe8-b4a5-4cca-949c-5c7980e35942",
+      "isActive": false,
+      "age": 30,
+      "name": "Sanchez Meyers",
+      "email": "sanchezmeyers@codact.com",
+      "address": "550 Pine Street, Waiohinu, Rhode Island, 5250",
+      "registered": "2015-03-10T01:33:41 +03:00",
+      "friends": []
+    },
+    {
+      "id": 4,
+      "guid": "8d4bb12f-16b9-4e93-9a6e-18350d7b8352",
+      "isActive": true,
+      "age": 35,
+      "name": "Arlene Horton",
+      "email": "arlenehorton@codact.com",
+      "address": "383 Menahan Street, Oley, Nevada, 3313",
+      "registered": "2016-07-21T07:06:52 +04:00",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Tina Gilmore"
+        },
+        {
+          "id": 1,
+          "name": "Corine Tran"
+        },
+        {
+          "id": 2,
+          "name": "Marcie Wells"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "guid": "f0d53fdd-0a2f-4d7f-8793-2fc873f6c812",
+      "isActive": true,
+      "age": 40,
+      "name": "Pope Gallegos",
+      "email": "popegallegos@codact.com",
+      "address": "144 Conway Street, Greer, Tennessee, 1829",
+      "registered": "2020-07-11T11:59:26 +04:00",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Lewis Rivera"
+        },
+        {
+          "id": 1,
+          "name": "Lawrence Holden"
+        },
+        {
+          "id": 2,
+          "name": "Barrera Harvey"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "guid": "852cd0f8-bbfa-4065-9941-99670e8fbac8",
+      "isActive": false,
+      "age": 26,
+      "name": "Leila Castillo",
+      "email": "leilacastillo@codact.com",
+      "address": "899 Grant Avenue, Crisman, Wisconsin, 1067",
+      "registered": "2020-04-06T12:45:41 +04:00",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Arnold Hartman"
+        },
+        {
+          "id": 1,
+          "name": "Yates Calhoun"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "guid": "a84be4a2-7426-4180-ac33-ed29607ae072",
+      "isActive": true,
+      "age": 36,
+      "name": "Hope Scott",
+      "email": "hopescott@codact.com",
+      "address": "591 Oak Street, Sugartown, West Virginia, 1406",
+      "registered": "2016-07-15T08:53:31 +04:00",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Dee Wiggins"
+        },
+        {
+          "id": 1,
+          "name": "Elma Harper"
+        },
+        {
+          "id": 2,
+          "name": "Patrice Hopper"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "guid": "0f1f3c82-100d-46bf-bdbc-ce82b94f89ac",
+      "isActive": true,
+      "age": 35,
+      "name": "Cunningham Fuller",
+      "email": "cunninghamfuller@codact.com",
+      "address": "785 Nova Court, Harmon, Guam, 7188",
+      "registered": "2016-10-05T01:38:10 +03:00",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Branch Morrison"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "guid": "ccb3ac61-9a44-40c0-8325-37429b8e6d7b",
+      "isActive": false,
+      "age": 20,
+      "name": "Lee Mcclain",
+      "email": "leemcclain@codact.com",
+      "address": "438 Veronica Place, Bakersville, Connecticut, 9769",
+      "registered": "2017-03-06T08:17:05 +03:00",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Brianna Jimenez"
+        },
+        {
+          "id": 1,
+          "name": "Sofia Keith"
+        },
+        {
+          "id": 2,
+          "name": "Elinor Knowles"
+        },
+        {
+          "id": 3,
+          "name": "Elinor Knowles"
+        }
+      ]
+    }
+  ]
