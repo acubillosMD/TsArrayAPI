@@ -2,7 +2,7 @@ import { Friend } from "model/friend";
 import { Person } from "model/person";
 import personJson from '../collections/person.json'
 
-export class ArrayApi{
+export class ArrayApiCommonlyUsed {
 
     //Obetener el total de personas
     GetPersonsCount(): number {
@@ -11,13 +11,13 @@ export class ArrayApi{
 
     //Obtener personas mayores a 30 años
     FilterByAgeOverThirty(): Person[]  {
-        let persons: Person[] = personJson.filter(person => person.age > 30)
+        const persons: Person[] = personJson.filter(person => person.age > 30)
         return persons;
     }
 
     //Obtener solo el nombre de personas mayores a 30 años
     GetPersonNamesWithAgeOverThirty(): string[] {
-        let personsNames: string[] = personJson.filter(person => person.age > 30)
+        const personsNames: string[] = personJson.filter(person => person.age > 30)
         .map(person => {
             return person.name
         })
@@ -26,13 +26,13 @@ export class ArrayApi{
 
     //Obtener personas sin amigos
     GetPersonsWithoutFriends(): Person[] {
-        let persons: Person[] = personJson.filter(person => person.friends.length <= 0)
+        const persons: Person[] = personJson.filter(person => person.friends.length <= 0)
         return persons;
     }
 
     //Obtener persona por ID
     GetPersonById(id: number): Person | undefined{
-        let person = personJson.find(person => person.id === id)
+        const person = personJson.find(person => person.id === id)
         return person
     }
 
@@ -43,30 +43,29 @@ export class ArrayApi{
 
     //Obtener todos los amigos
     GetAllFriends(): Friend[] {
-        let friends: Friend[] = personJson.map(person => person.friends).flat()
+        const friends: Friend[] = personJson.map(person => person.friends).flat()
         return friends
     }
 
     //Obtener solo los nombres de todos los amigos
     GetAllFriendsName(): string[] {
-        let friends: Friend[]  = personJson.filter(person => person.friends.flat())
-        let names: string[] = friends.map(friends => friends.name)
+        const friends: Friend[]  = personJson.filter(person => person.friends.flat())
+        const names: string[] = friends.map(friends => friends.name)
         return names
     }
 
     //Cual es el usuario con estado desactivado con más amigos.
     GetDisabledUserWithMostFriends(): Person | undefined {
-        let disabledPersons: Person[] = personJson.filter(person => !person.isActive)
-        let sortedByFriendsCount = disabledPersons.sort( (a, b) => b.friends.length - a.friends.length )
-        let mostFriends: number = sortedByFriendsCount[0].friends.length
-        let person: Person | undefined = disabledPersons.find(person => person.friends.length == mostFriends)
-        return person
+        const disabledPersons: Person | undefined = personJson.filter(person => !person.isActive)
+        .sort( (a, b) => b.friends.length - a.friends.length )
+        .at(0)
+        return disabledPersons
     }
 
     //Contar la cantidad de amigos totales que existen entre los usuarios con estado activo.
     GetTotalFriendsFromActiveUsers(): number {
-        let activePersons: Person[] = personJson.filter(person => person.isActive)
-        let friends: Friend[] = activePersons.map(person => person.friends).flat()
+        const activePersons: Person[] = personJson.filter(person => person.isActive)
+        const friends: Friend[] = activePersons.map(person => person.friends).flat()
         return friends.length
     }
 
@@ -80,10 +79,9 @@ export class ArrayApi{
 
     //Cual es el usuario más viejo con estado activo que tiene menos amigos
     GetOldestWithLessFriends(): Person {
-        let personByAgeDescending = personJson.sort( (a, b) => b.age - a.age )
-        console.log( personByAgeDescending )
-        let personsByAgeAndLessFriends = personByAgeDescending.sort(person => person.friends.length)
-        let oldestPersonWithLessFriends = personsByAgeAndLessFriends[0]
+        const personByAgeDescending = personJson.sort( (a, b) => b.age - a.age )
+        const personsByAgeAndLessFriends = personByAgeDescending.sort(person => person.friends.length)
+        const oldestPersonWithLessFriends = personsByAgeAndLessFriends[0]
         return oldestPersonWithLessFriends
     }
 
@@ -104,23 +102,23 @@ export class ArrayApi{
 
     //Cual amigo tiene el nombre más largo de todos
     GetFriendWithLongestName(): Friend {
-        let friends: Friend[]  = personJson.map(person => person.friends).flat()
-        let friendWithLongestName: Friend = friends.sort((a, b) => b.name.length - a.name.length)[0]
+        const friends: Friend[]  = personJson.map(person => person.friends).flat()
+        const friendWithLongestName: Friend = friends.sort((a, b) => b.name.length - a.name.length)[0]
         return friendWithLongestName
     }
 
     //Cual amigo tiene el nombre más corto de todos
     GetFriendWithShortestName(): Friend {
-        let friends: Friend[]  = personJson.map(person => person.friends).flat()
-        let friendWithShortestName: Friend = friends.sort((a, b) => a.name.length - b.name.length)[0]
+        const friends: Friend[]  = personJson.map(person => person.friends).flat()
+        const friendWithShortestName: Friend = friends.sort((a, b) => a.name.length - b.name.length)[0]
         return friendWithShortestName
     }
 
     //Cual persona tiene la numeración más alta en su dirección
     GetHighestAddressNumber(): number {
-        let personAddresses: string[] = personJson.map(person => person.address)
-        let addressesNumber: number[] = personAddresses.map(address => {
-            let addressNumber: number = Number(address.split(' ')[0].trim())
+        const personAddresses: string[] = personJson.map(person => person.address)
+        const addressesNumber: number[] = personAddresses.map(address => {
+            const addressNumber: number = Number(address.split(' ')[0].trim())
             return addressNumber
         })
         let highestAddressNumber = addressesNumber.sort((a, b) => b - a)[0]
@@ -129,12 +127,12 @@ export class ArrayApi{
 
     //Cual persona tiene el codigo postal menor
     GetLowestAddressNumber(): number {
-        let personAddresses: string[] = personJson.map(person => person.address)
-        let addressesNumber: number[] = personAddresses.map(address => {
-            let addressNumber: number = Number(address.split(' ').at(-1))
+        const personAddresses: string[] = personJson.map(person => person.address)
+        const addressesNumber: number[] = personAddresses.map(address => {
+            const addressNumber: number = Number(address.split(' ').at(-1))
             return addressNumber
         })
-        let highestAddressNumber = addressesNumber.sort((a, b) => a - b)[0]
+        const highestAddressNumber = addressesNumber.sort((a, b) => a - b)[0]
         return highestAddressNumber;
     }
 }
